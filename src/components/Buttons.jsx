@@ -6,4 +6,10 @@ const Button = ({handlerFunc, style, children}) => {
   );
 }
 
+// const StyledButton = ({handlerFunc, style, children}) => {
+//   return(
+    
+//   );
+// }
+
 export default Button;

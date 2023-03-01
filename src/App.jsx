@@ -29,33 +29,33 @@ function App() {
   //내용 useState
   const [content, setContent] = useState('');
 
-  //삭제
-  const deleteHandler = (item) => {
-    console.log('삭제할 id:', item.id);
-    //하는 중
-    const doingList = todoList.filter((el) => el.id !== item.id);
-    setTodoList(doingList);
-    alert(`${item.id}번을 삭제했습니다.`)
-  }
-
   //한 거
-  const doneHandler = (id, todoList) => {
+  const doneHandler = (id) => {
     const list = todoList.map((el) => {
       if(el.id === id) el.done = el.done ? false:true;
       return el;
     });
     /*
     const list = todoList.map((el) => {
-    if (el.id === id) {
-    return {
-    ...el, done : !el.done
-    }
-    } else {
-    return el;
-    }
+      if (el.id === id) {
+        return {
+        ...el, done : !el.done
+        }
+      } else {
+        return el;
+      }
     })
     */
     setTodoList(list);
+  }
+
+  //삭제
+  const deleteHandler = (item) => {
+    console.log('삭제할 id:', item.id);
+    //하는 중
+    const doingList = todoList.filter((el) => el.id !== item.id);
+    setTodoList(doingList);
+    alert(`[${item.title}]을 삭제했습니다.`)
   }
 
   return (
@@ -83,7 +83,7 @@ function App() {
                   key={item.id}
                   item={item}
                   deleteHandler={() => deleteHandler(item)}
-                  doneHandler={() => doneHandler(item.id, todoList)}
+                  doneHandler={() => doneHandler(item.id)}
                 />
               )
             })
@@ -102,7 +102,7 @@ function App() {
                   key={item.id}
                   item={item}
                   deleteHandler={() => deleteHandler(item)}
-                  doneHandler={() => doneHandler(item.id, todoList)}
+                  doneHandler={() => doneHandler(item.id)}
                 />
               )
             })
