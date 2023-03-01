@@ -48,7 +48,7 @@ h4 {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 
 .card-box {
