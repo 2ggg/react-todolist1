@@ -73,7 +73,7 @@ function App() {
         {/*여기까지는 잘 작동함*/}
 
         <div className='todo-list'>
-          <h3>하는 중...<EmoFire/></h3>
+          <h3>Working...<EmoFire/></h3>
           <div className='card-list'>
           {//하는 중인 리스트
             todoList.filter((item) => item.done === false)
@@ -92,7 +92,7 @@ function App() {
         </div>
 
         <div className='todo-list'>
-          <h3>해냈다...!<EmoDone/></h3>
+          <h3>Done...!<EmoDone/></h3>
           <div className='card-list'>
           {//끝난 리스트
             todoList.filter((item) => item.done === true)

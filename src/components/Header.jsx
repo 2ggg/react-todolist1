@@ -21,6 +21,8 @@ const Header = ({todoList, setTodoList, title, setTitle, content, setContent,}) 
       done: false,
     };
     setTodoList([...todoList, newList]);
+    setTitle("");
+    setContent("");
   };
 
   return(
@@ -31,13 +33,22 @@ const Header = ({todoList, setTodoList, title, setTitle, content, setContent,}) 
       </div>
       <div>
         <span>
-          제목
-          <input onChange={titleChangeHandler}/>
+          <span>
+            제목
+            <input
+              value={title}
+              onChange={titleChangeHandler}
+            />
+          </span>
+          <span>
+            내용
+            <input 
+              value={content}
+              onChange={contentChangeHandler}
+            />
+          </span>
         </span>
-        <span>
-          내용
-          <input onChange={contentChangeHandler}/>
-        </span>
+        
         {/* 추가하기 버튼 */}
         <Button 
           handlerFunc={addListHandler}
